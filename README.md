@@ -167,7 +167,7 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
   - [ ] 출력 메시지 출력 
 
 ### 차고
-- [ ] 자동차 생성
+- [X] 자동차 생성
 
 ### 레이서
 - [ ] 조건에 따라 이동
