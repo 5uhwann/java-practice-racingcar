@@ -169,8 +169,8 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
 ### 차고
 - [X] 자동차 생성
 
-### 레이서
-- [ ] 조건에 따라 이동
+### 운영자
+- [ ] 랜덤 값에 따른 이동 명령
 
 ### 심판
 - [ ] 결과 생성
@@ -188,5 +188,5 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
 2. 경주할 자동차 이름 입력
 3. 경주할 자동차 생성
 4. 시도 횟수 입력
-5. 레이서 이동, 결과 생성 및 출력 - 시도횟수만큼 반복
+5. 운영자 이동 명령, 결과 생성 및 출력 - 시도횟수만큼 반복
 6. 최종 결과 판별 및 출력
