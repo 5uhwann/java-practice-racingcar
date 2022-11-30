@@ -2,6 +2,8 @@ package racingcar.domain.garage;
 
 import static racingcar.domain.operator.Command.move;
 
+import racingcar.utils.ErrorMessage;
+
 public class Car {
 
     private final static int MAX_NAME_SIZE = 5;
@@ -9,7 +11,7 @@ public class Car {
     private final String name;
     private int position = 0;
 
-    public Car(String name) {
+    public Car(String name) throws IllegalArgumentException {
         validateCarName(name);
         this.name = name;
     }
@@ -23,9 +25,9 @@ public class Car {
         return position;
     }
 
-    private void validateCarName(String name) {
+    private void validateCarName(String name) throws IllegalArgumentException {
         if (name.length() > MAX_NAME_SIZE) {
-            throw new IllegalArgumentException("자동차 이름은 5자 이하여야 합니다.");
+            throw new IllegalArgumentException(ErrorMessage.CAR_NAME);
         }
     }
 
