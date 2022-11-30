@@ -2,9 +2,7 @@ package racingcar.domain.Referee;
 
 import static org.assertj.core.api.Assertions.*;
 
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.garage.Car;
@@ -53,13 +51,15 @@ class RefereeImplTest {
     @DisplayName("가장 앞선 자동차가 최종 우승한다.")
     void makeFinalResultTest_case1() {
         //given
-        Map<String, Integer> resultMap = new LinkedHashMap<>();
-        resultMap.put("hwan", 3);
-        resultMap.put("pobi", 1);
-        Result result = new Result(resultMap);
+        Car car1 = new Car("hwan");
+        Car car2 = new Car("pobi");
+        car1.move(6);
+        car2.move(2);
+
+        referee.makeResult(new Cars(List.of(car1, car2)));
 
         //when
-        FinalResult finalResult = referee.makeFinalResult(result);
+        FinalResult finalResult = referee.makeFinalResult();
 
         //then
         assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : hwan");
@@ -70,13 +70,15 @@ class RefereeImplTest {
     @DisplayName("최종 우승자 중에 공동 우승자가 있을 수 있다.")
     void makeFinalResultTest_case2() {
         //given
-        Map<String, Integer> resultMap = new LinkedHashMap<>();
-        resultMap.put("hwan", 3);
-        resultMap.put("pobi", 3);
-        Result result = new Result(resultMap);
+        Car car1 = new Car("hwan");
+        Car car2 = new Car("pobi");
+        car1.move(6);
+        car2.move(6);
+
+        referee.makeResult(new Cars(List.of(car1, car2)));
 
         //when
-        FinalResult finalResult = referee.makeFinalResult(result);
+        FinalResult finalResult = referee.makeFinalResult();
 
         //then
         assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : hwan, pobi");
