@@ -1,7 +1,9 @@
 package racingcar.domain.operator;
 
+import racingcar.domain.garage.Cars;
+
 public interface Operator {
 
-    Command makeCommand(int randomNumber);
+    void orderMove(Cars cars);
 
 }

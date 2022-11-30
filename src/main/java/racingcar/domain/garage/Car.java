@@ -1,5 +1,7 @@
 package racingcar.domain.garage;
 
+import static racingcar.domain.operator.Command.move;
+
 public class Car {
     private final String name;
     private int position = 0;
@@ -9,4 +11,17 @@ public class Car {
     }
 
     // 추가 기능 구현
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void move(int randomNumber) {
+        if (move.getConditions().contains(randomNumber)) {
+            position++;
+        }
+    }
 }
