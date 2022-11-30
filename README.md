@@ -163,7 +163,7 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
   - [X] 사용자 입력 
   
 - 출력
-  - [ ] 출력 메시지 출력 
+  - [X] 출력 메시지 출력 
 
 ### 차고
 - [X] 자동차 생성
@@ -178,7 +178,7 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
 ### 검증
 사용자 입력값 검증
 - [X] 자동차 이름 입력 검증
-- [ ] 시도 횟수 입력 검증
+- [X] 시도 횟수 입력 검증
 
 
 
