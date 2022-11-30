@@ -24,7 +24,7 @@ public class RefereeImpl implements Referee {
     }
 
     @Override
-    public FinalResult makeFinalResult(Result result) {
+    public FinalResult makeFinalResult() {
         Map<String, Integer> resultMap = result.getResult();
         int winnerPosition = getWinnerPosition(resultMap);
 

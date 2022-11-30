@@ -6,7 +6,6 @@ public interface Referee {
 
     ResultDto makeResult(Cars cars);
 
-    FinalResult makeFinalResult(Result result);
-
+    FinalResult makeFinalResult();
 
 }
