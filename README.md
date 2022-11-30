@@ -174,7 +174,7 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
 
 ### 심판
 - [X] 결과 생성
-- [ ] 최종 결과 판별
+- [X] 최종 결과 판별
 
 ### 검증
 사용자 입력값 검증
