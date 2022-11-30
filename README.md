@@ -170,7 +170,7 @@ This project is [MIT](https://github.com/woowacourse/java-racingcar-precourse/bl
 - [X] 자동차 생성
 
 ### 운영자
-- [ ] 랜덤 값에 따른 이동 명령
+- [X] 랜덤 값에 따른 이동 명령
 
 ### 심판
 - [ ] 결과 생성
