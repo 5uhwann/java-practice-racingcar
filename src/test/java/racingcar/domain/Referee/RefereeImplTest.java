@@ -2,7 +2,9 @@ package racingcar.domain.Referee;
 
 import static org.assertj.core.api.Assertions.*;
 
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import racingcar.domain.garage.Car;
@@ -44,6 +46,40 @@ class RefereeImplTest {
         String result = resultDto.getResultDto();
         assertThat(result).contains("suhwan : ");
         assertThat(result).doesNotContain("-");
+
+    }
+
+    @Test
+    @DisplayName("가장 앞선 자동차가 최종 우승한다.")
+    void makeFinalResultTest_case1() {
+        //given
+        Map<String, Integer> resultMap = new LinkedHashMap<>();
+        resultMap.put("suhwan", 3);
+        resultMap.put("pobi", 1);
+        Result result = new Result(resultMap);
+
+        //when
+        FinalResult finalResult = referee.makeFinalResult(result);
+
+        //then
+        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : suhwan");
+
+    }
+
+    @Test
+    @DisplayName("최종 우승자 중에 공동 우승자가 있을 수 있다.")
+    void makeFinalResultTest_case2() {
+        //given
+        Map<String, Integer> resultMap = new LinkedHashMap<>();
+        resultMap.put("suhwan", 3);
+        resultMap.put("pobi", 3);
+        Result result = new Result(resultMap);
+
+        //when
+        FinalResult finalResult = referee.makeFinalResult(result);
+
+        //then
+        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : suhwan, pobi");
 
     }
 
