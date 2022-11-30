@@ -18,7 +18,7 @@ class RefereeImplTest {
     @DisplayName("움직인 차의 결과를 생성한다.")
     void makeResultTest_Moving() {
         //given
-        Car car = new Car("suhwan");
+        Car car = new Car("hwan");
         car.move(6);
         Cars cars = new Cars(List.of(car));
 
@@ -27,7 +27,7 @@ class RefereeImplTest {
 
         //then
         String result = resultDto.getResultDto();
-        assertThat(result).contains("suhwan : ", "-");
+        assertThat(result).contains("hwan : ", "-");
 
     }
 
@@ -35,7 +35,7 @@ class RefereeImplTest {
     @DisplayName("움직이지 않은 차의 결과를 생성한다.")
     void makeResultTest_Stopping() {
         //given
-        Car car = new Car("suhwan");
+        Car car = new Car("hwan");
         car.move(2);
         Cars cars = new Cars(List.of(car));
 
@@ -44,7 +44,7 @@ class RefereeImplTest {
 
         //then
         String result = resultDto.getResultDto();
-        assertThat(result).contains("suhwan : ");
+        assertThat(result).contains("hwan : ");
         assertThat(result).doesNotContain("-");
 
     }
@@ -54,7 +54,7 @@ class RefereeImplTest {
     void makeFinalResultTest_case1() {
         //given
         Map<String, Integer> resultMap = new LinkedHashMap<>();
-        resultMap.put("suhwan", 3);
+        resultMap.put("hwan", 3);
         resultMap.put("pobi", 1);
         Result result = new Result(resultMap);
 
@@ -62,7 +62,7 @@ class RefereeImplTest {
         FinalResult finalResult = referee.makeFinalResult(result);
 
         //then
-        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : suhwan");
+        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : hwan");
 
     }
 
@@ -71,7 +71,7 @@ class RefereeImplTest {
     void makeFinalResultTest_case2() {
         //given
         Map<String, Integer> resultMap = new LinkedHashMap<>();
-        resultMap.put("suhwan", 3);
+        resultMap.put("hwan", 3);
         resultMap.put("pobi", 3);
         Result result = new Result(resultMap);
 
@@ -79,7 +79,7 @@ class RefereeImplTest {
         FinalResult finalResult = referee.makeFinalResult(result);
 
         //then
-        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : suhwan, pobi");
+        assertThat(finalResult.getTranslatedWinners()).isEqualTo("최종 우승자 : hwan, pobi");
 
     }
 

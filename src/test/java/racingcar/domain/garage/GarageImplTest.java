@@ -12,7 +12,7 @@ class GarageImplTest {
     void makeCarsTest() {
         //given
         Garage garage = new GarageImpl();
-        String carNamesInput = "pobi,suhwan";
+        String carNamesInput = "pobi,hwan";
 
         //when
         Cars cars = garage.makeCars(carNamesInput);
